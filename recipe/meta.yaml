@@ -1,4 +1,4 @@
-{% set version = "1.13.0" %}
+{% set version = "1.15.0" %}
 
 package:
   name: libfido2
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/Yubico/libfido2/archive/{{ version }}.tar.gz
-  sha256: 51d43727e2a1c4544c7fd0ee47786f443e39f1388ada735a509ad4af0a2459ca
+  sha256: 32e3e431cfe29b45f497300fdb7076971cb77fc584fcfa80084d823a6ed94fbb
 
 build:
   number: 0
@@ -17,11 +17,11 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
     - make
     - pkg-config
-    - sysroot_linux-64 2.17  # [linux64]
   host:
     - openssl
     - libcbor
